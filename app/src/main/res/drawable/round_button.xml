@@ -4,9 +4,10 @@
     <stroke android:color="@color/colorWhite"
         android:width="@dimen/_1sdp"/>
     <corners android:radius="100dp" />
-    <gradient
-        android:startColor="@color/colorPink"
-        android:endColor="@color/colorPurple"
-        android:angle="180"/>
+<!--    <gradient-->
+<!--        android:startColor="@color/colorPrimary"-->
+<!--        android:endColor="@color/colorPrimaryDark"-->
+<!--        android:angle="180"/>-->
+    <solid android:color="@color/colorPrimaryDark"/>
 
 </shape>

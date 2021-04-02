@@ -7,6 +7,6 @@ import retrofit2.http.GET
 interface PostsService {
 
     // Suspend modifier allows us to use couroutines with Retrofit
-    @GET("/posts")
+    @GET("comments")
     suspend fun getPosts(): Response<Posts>
 }

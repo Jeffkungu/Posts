@@ -41,7 +41,8 @@ class MyViewHolder(val itemPostBinding: ItemPostBinding):
     RecyclerView.ViewHolder(itemPostBinding.root){
 
     fun bind(postEntity: PostEntity){
-        itemPostBinding.tvTitle.text = postEntity.title
+        itemPostBinding.tvTitle.text = postEntity.name
         itemPostBinding.tvBody.text = postEntity.body
+        itemPostBinding.tvEmail.text = postEntity.email
     }
 }

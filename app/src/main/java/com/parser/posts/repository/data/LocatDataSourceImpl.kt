@@ -15,8 +15,8 @@ class LocatDataSourceImpl(private val postDao : PostDAO): LocalDataSource {
         return postDao.getPostsBellow45()
     }
 
-    override suspend fun getPostsBetween30and90(): List<PostEntity> {
-        return postDao.getPostsBetween30and90()
+    override suspend fun getPostsBetween25and100(): List<PostEntity> {
+        return postDao.getPostsBetween25and100()
     }
 
     override suspend fun addPosts(posts: List<PostEntity>) {

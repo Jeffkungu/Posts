@@ -8,15 +8,12 @@
     android:background="@drawable/page_background"
     tools:context=".view.MainActivity">
 
-    <TextView
+    <ImageView
         android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/posts"
-        android:textColor="@color/colorWhite"
-        android:textStyle="bold"
-        android:textSize="@dimen/_25ssp"
-        android:layout_marginBottom="@dimen/_50sdp"
+        android:layout_width="@dimen/_120sdp"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:src="@drawable/kwg_logo"
         app:layout_constraintBottom_toTopOf="@id/viewAll"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
@@ -26,7 +23,7 @@
         android:layout_width="@dimen/_170sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginBottom="@dimen/_25sdp"
-        app:layout_constraintBottom_toTopOf="@id/poststBellowId45"
+        app:layout_constraintBottom_toTopOf="@id/poststBetween25and100"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:background="@drawable/round_button"
@@ -46,7 +43,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/poststBellowId45"
+        android:id="@+id/poststBetween25and100"
         android:layout_width="@dimen/_170sdp"
         android:layout_height="@dimen/_40sdp"
         android:layout_marginTop="@dimen/_50sdp"
@@ -60,7 +57,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bellow 45"
+            android:text="Between 25 and 100"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/_15ssp"
             app:layout_constraintTop_toTopOf="parent"
@@ -70,29 +67,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/poststBetween30And90"
-        android:layout_width="@dimen/_170sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:layout_marginTop="@dimen/_25sdp"
-        app:layout_constraintTop_toBottomOf="@id/poststBellowId45"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:background="@drawable/round_button"
-        android:clickable="true">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Between 30 and 90"
-            android:textColor="@color/colorWhite"
-            android:textSize="@dimen/_15ssp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

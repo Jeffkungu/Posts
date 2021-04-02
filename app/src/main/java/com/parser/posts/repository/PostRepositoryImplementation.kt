@@ -53,9 +53,9 @@ class PostRepositoryImplementation(
         return postList
     }
 
-    override suspend fun getPostsBetween30and90(): List<PostEntity>? {
+    override suspend fun getPostsBetween25and100(): List<PostEntity>? {
         try {
-            postList = localDataSource.getPostsBetween30and90()
+            postList = localDataSource.getPostsBetween25and100()
         } catch(exception : Exception) {
             Log.i("ERROR", exception.message.toString())
         }

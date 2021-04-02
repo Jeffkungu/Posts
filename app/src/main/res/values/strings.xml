@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">Posts</string>
+    <string name="app_name">kwg</string>
     <string name="posts">Posts</string>
     <string name="userID">10</string>
     <string name="id">67</string>
-    <string name="title">ugiat quod pariatur odit minima</string>
+    <string name="title">d eos explicabo odio velit</string>
+    <string name="email">Mina@mallie.name</string>
     <string name="body">fficiis error culpa consequatur modi asperiores et\ndolorum assumenda voluptas et vel qui aut vel rerum\nvoluptatum quisquam perspiciatis quia rerum consequatur totam quas\nsequi commodi repudiandae asperiores et saepe a</string>
+    <string name="posts_toolbar_title">Posts</string>
 </resources>

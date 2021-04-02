@@ -18,8 +18,8 @@ class PostsViewModel(private val useCases: UseCases): ViewModel() {
         emit(postList)
     }
 
-    fun getPostsBetwen30and90(): LiveData<List<PostEntity>?> = liveData {
-        val postList: List<PostEntity>? = useCases.getPostsBetween30and90()
+    fun getPostsBetwen25and100(): LiveData<List<PostEntity>?> = liveData {
+        val postList: List<PostEntity>? = useCases.getPostsBetween25and100()
         emit(postList)
     }
 }

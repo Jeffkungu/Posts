@@ -2,40 +2,55 @@
 <layout>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/_110sdp"
-    android:layout_marginBottom="@dimen/_10sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginLeft="@dimen/_8sdp"
+    android:layout_marginRight="@dimen/_8sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardBackgroundColor="@color/colorPink">
+    app:cardBackgroundColor="@color/colorWhite">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp">
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="@dimen/_180sdp"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_height="wrap_content"
             android:text="@string/title"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorBlack"
             android:textSize="@dimen/_12ssp"
             android:textStyle="bold"
+            android:gravity="center_vertical"
             android:layout_marginBottom="@dimen/_7sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/tvBody"/>
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textColor="@color/colorGray"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/_7sdp"
+            app:layout_constraintLeft_toLeftOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"/>
 
         <TextView
             android:id="@+id/tvBody"
             android:layout_width="@dimen/_270sdp"
             android:layout_height="@dimen/_50sdp"
             android:text="@string/body"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorBlack"
             android:textSize="@dimen/_10ssp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.705" />
+            app:layout_constraintLeft_toLeftOf="@id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvEmail"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -3,9 +3,7 @@ package com.parser.posts.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Adapter
-import android.widget.LinearLayout
-import android.widget.Toast
+import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -36,6 +34,13 @@ class PostsActivity : AppCompatActivity() {
         activityPostBinding = DataBindingUtil.setContentView(this, R.layout.activity_posts)
         activityPostBinding.lifecycleOwner = this
 
+        setSupportActionBar(activityPostBinding.toolbarPosts)
+        if (supportActionBar != null) {
+            supportActionBar!!.setDisplayShowHomeEnabled(true)
+            supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+            supportActionBar!!.title = getString(R.string.posts_toolbar_title)
+        }
+
         // Inject dependency to activity
         (application as Injector).createPostSubComponent().inject(this)
 
@@ -49,8 +54,7 @@ class PostsActivity : AppCompatActivity() {
 
         when(postType) {
             ConstantValues.DISPLAY_ALL_POSTS -> displayAllPosts()
-            ConstantValues.DISPLAY_POSTS_BELLLOW45 -> displayPostsBellow45()
-            ConstantValues.DISPLAY_POSTS_BETWEEN_30_AND_90 -> displayPostsBeteen30and90()
+            ConstantValues.DISPLAY_POSTS_BETWEEN_25_AND_100 -> displayPostsBeteen25and100()
         }
     }
 
@@ -65,35 +69,30 @@ class PostsActivity : AppCompatActivity() {
         resposnseLiveData.observe(this, Observer {
             if (it != null) {
                 Log.i("RESULTS", it.size.toString())
-                activityPostBinding.tvTitle.text = it.size.toString() + " Posts"
+                supportActionBar!!.title = it.size.toString() + " Posts"
                 postsAdapter.setPosts(it)
                 postsAdapter.notifyDataSetChanged()
             }
         })
     }
 
-    private fun displayPostsBellow45() {
-        val resposnseLiveData: LiveData<List<PostEntity>?> = postsViewModel.getPostsBellow45()
+    private fun displayPostsBeteen25and100() {
+        val resposnseLiveData: LiveData<List<PostEntity>?> = postsViewModel.getPostsBetwen25and100()
         resposnseLiveData.observe(this, Observer {
             if (it != null) {
                 Log.i("RESULTS", it.size.toString())
-                activityPostBinding.tvTitle.text = it.size.toString() + " Posts"
+                supportActionBar!!.title = it.size.toString() + " Posts"
                 postsAdapter.setPosts(it)
                 postsAdapter.notifyDataSetChanged()
             }
         })
     }
 
-    private fun displayPostsBeteen30and90() {
-        val resposnseLiveData: LiveData<List<PostEntity>?> = postsViewModel.getPostsBetwen30and90()
-        resposnseLiveData.observe(this, Observer {
-            if (it != null) {
-                Log.i("RESULTS", it.size.toString())
-                activityPostBinding.tvTitle.text = it.size.toString() + " Posts"
-                postsAdapter.setPosts(it)
-                postsAdapter.notifyDataSetChanged()
-            }
-        })
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (android.R.id.home == item.itemId) {
+            onBackPressed()
+        }
+        return true
     }
 
 }

@@ -13,27 +13,25 @@ import com.google.gson.annotations.SerializedName
 data class PostEntity (
 
     // Its best practice to give columns separate names from member variables
-    @SerializedName("body")
-    @ColumnInfo(name = "post_body")
-    val body: String,
+    @SerializedName("postId")
+    @ColumnInfo(name = "post_id")
+    val postId: Int,
 
     @SerializedName("id")
     @PrimaryKey
-    @ColumnInfo(name = "post_id")
+    @ColumnInfo(name = "id")
     val id: Int,
 
-    @SerializedName("title")
-    @ColumnInfo(name = "post_title")
-    val title: String,
+    @SerializedName("name")
+    @ColumnInfo(name = "post_name")
+    val name: String,
 
-    @SerializedName("userId")
-    @ColumnInfo(name = "post_user_id")
-    val userId: Int
+    @SerializedName("email")
+    @ColumnInfo(name = "post_email")
+    val email: String,
 
-
-
-
-
-
+    @SerializedName("body")
+    @ColumnInfo(name = "post_body")
+    val body: String
 
 )

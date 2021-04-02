@@ -19,10 +19,10 @@ interface PostDAO {
     @Query("SELECT * FROM post_table")
     suspend fun getAllPosts(): List<PostEntity>
 
-    @Query("SELECT * FROM post_table WHERE post_id >= 30 and post_id <= 90")
-    suspend fun getPostsBetween30and90(): List<PostEntity>
+    @Query("SELECT * FROM post_table WHERE id >= 25 and id <= 100")
+    suspend fun getPostsBetween25and100(): List<PostEntity>
 
-    @Query("SELECT * FROM post_table WHERE post_id <= 45")
+    @Query("SELECT * FROM post_table WHERE id <= 45")
     suspend fun getPostsBellow45(): List<PostEntity>
 
     @Query("DELETE FROM post_table")
